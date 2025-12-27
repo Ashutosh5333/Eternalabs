@@ -15,10 +15,8 @@ function TokenTableComponent() {
   const { isLoading, isError } = useTokenData();
   const tokens = useSelector((s: RootState) => s.tokens.data);
 
-  // 🔥 always create a stable array (even when empty)
-  const ids = useMemo(() => tokens?.map(t => t.id) ?? [], [tokens]);
+  const ids = useMemo(() => tokens?.map((t) => t.id) ?? [], [tokens]);
 
-  // 🔥 ALWAYS call hook - never conditionally
   useWebsocketPriceStream(ids);
 
   const [tab, setTab] = useState("all");
@@ -47,14 +45,11 @@ function TokenTableComponent() {
 
   return (
     <div>
-
       <Tabs active={tab} setActive={setTab} />
 
       <div className="overflow-x-auto">
-
         <div className="relative min-w-[1100px]">
           <table className="w-full table-fixed border border-separate border-black border-spacing-0 gap-20">
-          
             <thead className="sticky top-0 z-20 bg-surface border border-border">
               <TableHeader
                 sortField={sortField}
@@ -76,4 +71,3 @@ function TokenTableComponent() {
 }
 
 export default memo(TokenTableComponent);
-
