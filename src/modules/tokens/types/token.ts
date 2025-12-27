@@ -19,4 +19,5 @@ export interface Token {
   priceChange: number;
   sparkline: number[];
   icon: string;
+  __flash?: "up" | "down";
 }

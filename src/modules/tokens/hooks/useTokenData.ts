@@ -8,7 +8,6 @@ function generateTokens(): Token[] {
   const count = 15;
   const statuses = ["new", "final", "migrated"];
 
-  // Known crypto logo base (CoinGecko)
   const logoMap: Record<string, string> = {
     BTC: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
     ETH: "https://assets.coingecko.com/coins/images/279/large/ethereum.png",

@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,51 +7,54 @@
 }
 
 body {
-  background: #0B0E14;
+  background: #0b0e14;
   color: white;
   font-family: Inter, system-ui;
 }
 
-
 :root {
-  --text-primary: rgba(255,255,255,0.9);
-  --text-secondary: rgba(255,255,255,0.65);
-  --text-muted: rgba(255,255,255,0.4);
+  --text-primary: rgba(255, 255, 255, 0.9);
+  --text-secondary: rgba(255, 255, 255, 0.65);
+  --text-muted: rgba(255, 255, 255, 0.4);
 }
-
 
 .price-up {
   color: #2aff6a;
-  transition: color .3s ease, background .3s ease;
+  transition: color 0.3s ease, background 0.3s ease;
 }
 
 .price-down {
   color: #ff4d6d;
-  transition: color .3s ease, background .3s ease;
+  transition: color 0.3s ease, background 0.3s ease;
 }
 
 .price-up:before,
 .price-down:before {
-  content:"";
-  position:absolute;
-  inset:0;
-  opacity:.15;
-  border-radius:6px;
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  border-radius: 6px;
 }
 
 .price-up:before {
-  background:#2aff6a;
+  background: #2aff6a;
 }
 
 .price-down:before {
-  background:#ff4d6d;
+  background: #ff4d6d;
 }
 
-
 @keyframes pulseGlow {
-  0% { box-shadow: 0 0 6px rgba(0,0,0,0.0); }
-  50% { box-shadow: 0 0 14px currentColor; }
-  100% { box-shadow: 0 0 6px rgba(0,0,0,0.0); }
+  0% {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0);
+  }
+  50% {
+    box-shadow: 0 0 14px currentColor;
+  }
+  100% {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0);
+  }
 }
 
 .animate-pulse-glow {
@@ -60,11 +62,69 @@ body {
 }
 
 @keyframes axiomGlow {
-  0% { box-shadow: 0 0 6px rgba(0,0,0,.2); }
-  50% { box-shadow: 0 0 16px rgba(255,255,255,.35); }
-  100% { box-shadow: 0 0 6px rgba(0,0,0,.2); }
+  0% {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.35);
+  }
+  100% {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .animate-axiomGlow {
   animation: axiomGlow 1.6s ease-in-out infinite;
+}
+
+.flash-up {
+  animation: priceUpFlash 0.6s ease-out;
+}
+
+.flash-down {
+  animation: priceDownFlash 0.6s ease-out;
+}
+
+@keyframes priceUpFlash {
+  0% {
+    background: rgba(0, 255, 120, 0.25);
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+@keyframes priceDownFlash {
+  0% {
+    background: rgba(255, 0, 80, 0.25);
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+@keyframes flashUp {
+  0% {
+    background: rgba(0, 255, 120, 0.15);
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+@keyframes flashDown {
+  0% {
+    background: rgba(255, 80, 80, 0.25);
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+.animate-flashUp {
+  animation: flashUp 0.6s ease-out;
+}
+
+.animate-flashDown {
+  animation: flashDown 0.6s ease-out;
 }
