@@ -25,8 +25,7 @@ function PairCellComponent({ data }: { data: Token }) {
       <Activity size={10} className="text-yellow-400" />
     );
 
-    const watchers = useMemo(() => Math.floor(Math.random() * 400), []);
-
+  const watchers = useMemo(() => Math.floor(Math.random() * 400), []);
 
   const ImageBlock = (
     <div
@@ -74,33 +73,21 @@ function PairCellComponent({ data }: { data: Token }) {
     <div className="flex items-center gap-2.5 min-w-0">
       {/* Desktop hover → HoverCard | Mobile → normal */}
       <div className="hidden sm:block">
-      {typeof window !== "undefined" && window.innerWidth > 640 && (
-        <HoverCard trigger={ImageBlock}>
-          <div className="p-3">
-            <Image
-              src={data.icon}
-              alt={data.name}
-              width={300}
-              height={300}
-              className="w-full rounded-lg mb-2 object-cover"
-              loading="lazy"
-              priority={false}
-            />
-
-            <div className="flex justify-between mb-1">
-              <span className="font-semibold">{data.name}</span>
-              <span className="text-xs text-gray-400">{data.symbol}</span>
+        {typeof window !== "undefined" && window.innerWidth > 640 && (
+          <HoverCard trigger={ImageBlock}>
+            <div className="p-3">
+              <Image
+                src={data.icon}
+                alt={data.name}
+                width={300}
+                height={300}
+                className="w-full rounded-lg mb-2 object-cover"
+                loading="lazy"
+                priority={false}
+              />
             </div>
-            <p className="text-xs text-gray-400">Business on Blockchain</p>
-            <div className="mt-2 text-xs text-gray-400">
-              Joined {data.age} ago
-            </div>
-            <button className="mt-2 w-full text-sm bg-[#1d9bf0] hover:bg-[#1888d4] rounded-lg py-1 transition">
-              View Profile
-            </button>
-          </div>
-        </HoverCard>
-      )}
+          </HoverCard>
+        )}
       </div>
 
       {/* Mobile → no hover */}

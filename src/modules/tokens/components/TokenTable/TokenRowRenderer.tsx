@@ -5,7 +5,6 @@ import PairCell from "../cells/PairCell";
 import TokenSparkline from "../TokenSparkline";
 import { cn } from "../../utils/cn";
 
-
 export function renderTokenCell(key: string, data: Token) {
   const up = data.priceChange >= 0;
 
@@ -30,9 +29,7 @@ export function renderTokenCell(key: string, data: Token) {
           <span
             className={cn(
               "flex items-center gap-1 text-[11px] sm:text-[13px]",
-              up ? "text-green-400" : "text-red-400",
-              data.__flash === "up" && "animate-flashUp",
-              data.__flash === "down" && "animate-flashDown"
+              up ? "text-green-400" : "text-red-400"
             )}
           >
             {up ? "▲" : "▼"} {Math.abs(data.priceChange).toFixed(2)}%
@@ -49,13 +46,7 @@ export function renderTokenCell(key: string, data: Token) {
 
     case "volume":
       return (
-        <span
-          className={cn(
-            "text-white/90 text-[13px] font-medium",
-            data.__flash === "up" && "animate-flashUp",
-            data.__flash === "down" && "animate-flashDown"
-          )}
-        >
+        <span className={cn("text-white/90 text-[13px] font-medium")}>
           ${(data.volume / 1000).toFixed(1)}K
         </span>
       );
@@ -65,9 +56,7 @@ export function renderTokenCell(key: string, data: Token) {
         <div className="flex flex-col leading-tight">
           <span
             className={cn(
-              "text-white/90 font-medium text-[11px] sm:text-[13px]",
-              data.__flash === "up" && "animate-flashUp",
-              data.__flash === "down" && "animate-flashDown"
+              "text-white/90 font-medium text-[11px] sm:text-[13px]"
             )}
           >
             {data.txnsBuy + data.txnsSell}

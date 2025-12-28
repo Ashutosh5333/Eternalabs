@@ -12,7 +12,7 @@ export default function DataTableRow({
   rowClass?: string;
 }) {
   return (
-    <tr className={`border-b border-border hover:bg-surfaceLight 
+    <tr className={`border border-border hover:bg-surfaceLight 
     transition hover:cursor-pointer ${rowClass}`}>
       {columns.map((col) => (
         <td

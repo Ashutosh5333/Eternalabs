@@ -14,7 +14,6 @@ import DataTableBody from "@/shared/datatable/DataTableBody";
 function TokenTableComponent() {
   const { isLoading, isError } = useTokenData();
   const tokens = useSelector((s: RootState) => s.tokens.data);
-
   const ids = useMemo(() => tokens?.map((t) => t.id) ?? [], [tokens]);
 
   useWebsocketPriceStream(ids);
@@ -47,9 +46,13 @@ function TokenTableComponent() {
     <div>
       <Tabs active={tab} setActive={setTab} />
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto rounded">
+
         <div className="relative min-w-[1100px]">
-          <table className="w-full table-fixed border border-separate border-black border-spacing-0 gap-20">
+          
+          <table className="w-full table-fixed
+            border-collapse border-0 gap-20">
+           
             <thead className="sticky top-0 z-20 bg-surface border border-border">
               <TableHeader
                 sortField={sortField}

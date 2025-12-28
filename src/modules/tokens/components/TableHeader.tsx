@@ -18,8 +18,8 @@ export default memo(function TableHeader({
   );
 
   return (
-    <tr className="text-gray-400 text-xs sm:text-sm">
-      <th className="text-left px-2 py-2 font-normal w-[260px]">Pair Info</th>
+    <tr className="text-gray-400 text-xs sm:text-sm  border border-border">
+      <th className="text-left px-2 py-2 font-normal w-[260px] ">Pair Info</th>
 
       <th className="w-[110px]"></th>
 
