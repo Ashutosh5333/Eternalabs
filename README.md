@@ -86,6 +86,8 @@ Built using **Atomic + Modular Architecture**, fully reusable and DRY.
 - <100ms interaction target
 - Stable animations
 - Lighthouse ≥ 90 (Mobile + Desktop)
+- <img width="1710" height="1112" alt="Screenshot 2025-12-28 at 3 14 07 PM" src="https://github.com/user-attachments/assets/2cb89f6e-535f-4a05-868d-edb906b8ccb5" />
+
 
 ---
 
