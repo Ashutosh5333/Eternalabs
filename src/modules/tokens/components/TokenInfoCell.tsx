@@ -32,12 +32,12 @@ export default function TokenInfoCell({ data }: { data: Token }) {
           {/* ----- Row 1 ----- */}
 
           <div className="flex gap-2">
-            <ChipRed label="Whale Risk">
+            <ChipRed label="Top 10 Holders">
               <Users size={11} />
               {Math.abs(data.priceChange).toFixed(2)}%
             </ChipRed>
 
-            <ChipGreen label="Holder Trust">
+            <ChipGreen label="Insiders">
               <Ghost size={11} />
               {data.tokenInfo.v1}%
             </ChipGreen>
@@ -46,18 +46,18 @@ export default function TokenInfoCell({ data }: { data: Token }) {
           {/* ----- Row 2 ----- */}
 
           <div className="flex gap-2">
-            <ChipGreen label="Liquidity Safety">
+            <ChipGreen label="Dev Holding">
               <ChefHat size={11} />
               {data.tokenInfo.v2}%
             </ChipGreen>
 
             {data.tokenInfo.v3 >= 20 ? (
-              <ChipRed label="Bot / High Risk">
+              <ChipRed label="snipers">
                 <Network size={11} />
                 {data.tokenInfo.v3}%
               </ChipRed>
             ) : (
-              <ChipGreen label="Healthy Activity">
+              <ChipGreen label="Bundlers ">
                 <Network size={11} />
                 {data.tokenInfo.v3}%
               </ChipGreen>
@@ -67,26 +67,24 @@ export default function TokenInfoCell({ data }: { data: Token }) {
           {/* ----- Row 3 ----- */}
 
           {data.tokenInfo.paid ? (
-            <ChipGreen label="Verified Listing">
+            <ChipGreen label="Dex Paid">
               <Shield size={11} />
               Paid
             </ChipGreen>
           ) : (
-            <ChipRed label="Unverified Listing">
+            <ChipRed llabel="Dex Paid">
               <Shield size={11} />
               Unpaid
             </ChipRed>
           )}
         </div>
 
-
-
         <div className="flex flex-col gap-1 translate-y-[6px] text-white/85">
-          <Stat label="Users Watching">
+          <Stat>
             <Users size={11} /> {Math.floor(Math.random() * 200) + 20}
           </Stat>
 
-          <Stat label="Trading Activity">
+          <Stat>
             <CandlestickChart size={11} />{" "}
             {Math.floor(Math.random() * 150) + 20}
           </Stat>
