@@ -1,22 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
+  experimental: { appDir: true },
+
+  reactStrictMode: true,
+  compiler: { removeConsole: true },
 
   images: {
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "assets.coingecko.com",
-      },
-      {
-        protocol: "https",
-        hostname: "loremflickr.com",
-      },
+      { protocol: "https", hostname: "assets.coingecko.com" },
+      { protocol: "https", hostname: "loremflickr.com" }
     ],
-
-    // 🔥 HD / Retina friendly
     formats: ["image/webp", "image/avif"],
     minimumCacheTTL: 86400,
     deviceSizes: [64, 96, 128, 256, 384, 512],
@@ -25,6 +18,7 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
 
 // /** @type {import('next').NextConfig} */
 // const nextConfig = { experimental: { appDir: true } };

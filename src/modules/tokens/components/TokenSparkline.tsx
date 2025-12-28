@@ -3,14 +3,13 @@ import { memo, useMemo } from "react";
 
 export default memo(function TokenSparkline({
   points,
-  up
+  up,
 }: {
   points: number[];
   up: boolean;
 }) {
-  if (!points?.length) return (
-    <div className="w-20 sm:w-[70px] max-sm:w-[60px] h-6" />
-  );
+  if (!points?.length)
+    return <div className="w-20 sm:w-[70px] max-sm:w-[60px] h-6" />;
 
   const width = 90;
   const height = 26;
@@ -20,7 +19,7 @@ export default memo(function TokenSparkline({
   const range = max - min || 1;
 
   const normalized = useMemo(
-    () => points.map(p => ((p - min) / range) * (height - 4)),
+    () => points.map((p) => ((p - min) / range) * (height - 4)),
     [points, min, range]
   );
 
@@ -37,6 +36,16 @@ export default memo(function TokenSparkline({
 
   const color = up ? "#2BCB51" : "#E14C63";
   const gradientId = `spark-${Math.random()}`;
+
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+
+  if (isMobile) {
+    return (
+      <svg width={width} height={height}>
+        <path d={d} stroke={color} strokeWidth="2" fill="none" />
+      </svg>
+    );
+  }
 
   return (
     <svg
@@ -66,11 +75,9 @@ export default memo(function TokenSparkline({
         strokeWidth="2"
         fill="none"
         style={{
-          transition: "d 0.25s ease, stroke 0.25s ease"
+          transition: "d 0.25s ease, stroke 0.25s ease",
         }}
       />
     </svg>
   );
 });
-
-

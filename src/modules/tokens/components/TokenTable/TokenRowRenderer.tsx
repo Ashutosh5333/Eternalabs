@@ -1,9 +1,10 @@
-import TokenSparkline from "../TokenSparkline";
 import { Token } from "../../types/token";
 import Button from "@/shared/components/Button";
 import TokenInfoCell from "../TokenInfoCell";
 import PairCell from "../cells/PairCell";
+import TokenSparkline from "../TokenSparkline";
 import { cn } from "../../utils/cn";
+
 
 export function renderTokenCell(key: string, data: Token) {
   const up = data.priceChange >= 0;
@@ -83,7 +84,7 @@ export function renderTokenCell(key: string, data: Token) {
       return <TokenInfoCell data={data} />;
 
     case "action":
-      return <Button>Buy</Button>;
+      return <Button aria-label="Buy Token">Buy</Button>;
 
     default:
       return null;

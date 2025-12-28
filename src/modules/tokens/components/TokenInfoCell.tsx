@@ -79,7 +79,7 @@ export default function TokenInfoCell({ data }: { data: Token }) {
           )}
         </div>
 
-        {/* RIGHT STACK */}
+
 
         <div className="flex flex-col gap-1 translate-y-[6px] text-white/85">
           <Stat label="Users Watching">
